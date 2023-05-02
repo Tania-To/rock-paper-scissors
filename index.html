@@ -3,13 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Page Title</title>
-  
+  <link rel="stylesheet" href="styles.css">
+  <script src="game.js" defer="defer"></script>
 </head>
 <body>
-    <script src="game.js"></script>
+   <div class="msg"></div>
+  
+  <div class="center">
+    <button class="buttons" id="Rock" disabled>Rock</button>
+    <button class="buttons" id="Paper" disabled>Paper</button>
+    <button class="buttons" id="Scissor" disabled>Scissor</button>
+  </div>
+  
+    <div id="container">
 
-    <div class="images">
-      <img>
     </div>
+    
+    <div class="score"></div>
+      <div class="boxes">
+        <div class="box1">
+          <div class="you">You: <span id="player1">0</span></div>
+        </div>
+        <div>
+        <div class="box2">
+          <div class="computer">Computer: <span id="player2">0</span></div>
+        </div>
+      </div>
+    </div>
+    <div><button class="play" onclick="restartGame()">Play / Reset</button></div>
+    
 </body>
 </html>
