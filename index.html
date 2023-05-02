@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Page Title</title>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors Game </title>
   <link rel="stylesheet" href="styles.css">
   <script src="game.js" defer="defer"></script>
 </head>
 <body>
-   <div class="msg"></div>
+  <div class="title">
+    <h1>Rock, Paper, Scissors Game</h1>
+  </div>
+  <div class="instruct">  <h2>Press Play/Reset button to play</h2></div>
   
+   <div class="msg"></div>
+  <div class="main">
   <div class="center">
     <button class="buttons" id="Rock" disabled>Rock</button>
     <button class="buttons" id="Paper" disabled>Paper</button>
-    <button class="buttons" id="Scissor" disabled>Scissor</button>
+    <button class="buttons" id="Scissors" disabled>Scissors</button>
   </div>
+  <audio id="myAudio"><source src="./mixkit-hand-tribal-drum-562.wav"></audio>
   
     <div id="container">
 
@@ -31,6 +37,7 @@
       </div>
     </div>
     <div class="play_reset"><button class="play" onclick="restartGame()">Play / Reset</button></div>
+  </div>
     
 </body>
 </html>

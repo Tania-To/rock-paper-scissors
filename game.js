@@ -1,6 +1,6 @@
 function getComputerChoice()
 {
-    let arr=['Rock', 'Paper', 'Scissor'];
+    let arr=['Rock', 'Paper', 'Scissors'];
 
     let rand = Math.floor(Math.random() * arr.length);
     let randChoice = arr[rand];
@@ -24,7 +24,7 @@ const restart = document.createElement('button');
 
 let rockElement = document.getElementById('Rock');
 let paperElement = document.getElementById('Paper');
-let scissorElement = document.getElementById('Scissor');
+let scissorElement = document.getElementById('Scissors');
 
 restart.textContent = "Restart";
 restart.style.display = 'none';
@@ -60,7 +60,9 @@ buttons.forEach((item)=>{
     item.addEventListener('click', playRound)
   
     });
-
+buttons.forEach((item)=>{
+    item.addEventListener('click', playSound)
+});
 
 function playRound(computerChoice, playerChoice)
 {
@@ -78,7 +80,7 @@ function playRound(computerChoice, playerChoice)
     lost.textContent = "You lost."+" " +computerChoice+" "+ "beats"+" " +playerChoice;
     tie.textContent = "It's a tie. Computer chose "+" " +computerChoice+" " +"and you chose"+" " +playerChoice;
   
-    if(playerChoice==='Rock'&&computerChoice==='Scissor'|| playerChoice==='Paper'&&computerChoice==='Rock'|| playerChoice==='Scissor'&&computerChoice==='Paper'){
+    if(playerChoice==='Rock'&&computerChoice==='Scissors'|| playerChoice==='Paper'&&computerChoice==='Rock'|| playerChoice==='Scissors'&&computerChoice==='Paper'){
         
     
         won.style.display="block";
@@ -98,7 +100,7 @@ function playRound(computerChoice, playerChoice)
         } 
 
     } 
-    else if(playerChoice==='Paper'&&computerChoice==='Scissor'|| playerChoice==='Rock'&&computerChoice==='Paper'|| playerChoice==='Scissor'&&computerChoice==='Rock')
+    else if(playerChoice==='Paper'&&computerChoice==='Scissors'|| playerChoice==='Rock'&&computerChoice==='Paper'|| playerChoice==='Scissors'&&computerChoice==='Rock')
     {
       
         won.style.display="none";
@@ -120,7 +122,7 @@ function playRound(computerChoice, playerChoice)
 
        
     }
-    else if(playerChoice==='Rock'&&computerChoice==='Rock'|| playerChoice==='Paper'&&computerChoice==='Paper'|| playerChoice==='Scissor'&&computerChoice==='Scissor')
+    else if(playerChoice==='Rock'&&computerChoice==='Rock'|| playerChoice==='Paper'&&computerChoice==='Paper'|| playerChoice==='Scissors'&&computerChoice==='Scissors')
     {
         
         won.style.display="none";
@@ -143,7 +145,12 @@ function restartGame(){
     player2ScoreElement.textContent = 0;
     rockElement.disabled = false;
     paperElement.disabled = false;
-    scissorElement.disabled=false
+    scissorElement.disabled=false;
+}
+function playSound(){
+    let audio = document.getElementById("myAudio");
+    audio.currenTime=0;
+    audio.play();
 }
 
 
