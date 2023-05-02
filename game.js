@@ -26,6 +26,16 @@ let rockElement = document.getElementById('Rock');
 let paperElement = document.getElementById('Paper');
 let scissorElement = document.getElementById('Scissors');
 
+let image1 = document.getElementById('image1');
+let image2= document.getElementById('image2');
+let image3=document.getElementById('image3');
+
+let image4 = document.getElementById('image4');
+let image5= document.getElementById('image5');
+let image6=document.getElementById('image6');
+
+
+
 restart.textContent = "Restart";
 restart.style.display = 'none';
 msgfirst.textContent = "Game Over!!!";
@@ -74,6 +84,7 @@ function playRound(computerChoice, playerChoice)
     playerChoice = this.id;
     console.log("you:" ,playerChoice);
     console.log("Computer: ", computerChoice);
+    
     let count = 0;
     
     won.textContent = "You won." + playerChoice + " " +"beats "+" " +computerChoice;
@@ -88,6 +99,8 @@ function playRound(computerChoice, playerChoice)
         tie.style.display="none";
         player1++;
         player1ScoreElement.textContent = player1;
+        showPlayerImage(playerChoice);
+        showComputerImage(computerChoice);
         if(player1===winnerScore)
         {
             msgfirst.style.display = 'block';
@@ -108,6 +121,8 @@ function playRound(computerChoice, playerChoice)
         tie.style.display="none";
         player2++;
         player2ScoreElement.textContent = player2;
+        showPlayerImage(playerChoice);
+        showComputerImage(computerChoice);
         if(player2===winnerScore)
         {
             msgfirst.style.display = 'block';
@@ -124,7 +139,8 @@ function playRound(computerChoice, playerChoice)
     }
     else if(playerChoice==='Rock'&&computerChoice==='Rock'|| playerChoice==='Paper'&&computerChoice==='Paper'|| playerChoice==='Scissors'&&computerChoice==='Scissors')
     {
-        
+        showPlayerImage(playerChoice);
+        showComputerImage(computerChoice);
         won.style.display="none";
         lost.style.display="none";
         tie.style.display="block";
@@ -139,6 +155,12 @@ function restartGame(){
     won.style.display="none";
     lost.style.display="none";
     tie.style.display="none";
+    image1.style.display='none';
+    image2.style.display='none';
+    image3.style.display='none';
+    image4.style.display='none';
+        image5.style.display='none';
+        image6.style.display = 'none';
     player1 = 0;
     player2 = 0;
     player1ScoreElement.textContent = 0;
@@ -151,6 +173,65 @@ function playSound(){
     let audio = document.getElementById("myAudio");
     audio.currenTime=0;
     audio.play();
+}
+function showPlayerImage(play1, play2)
+{
+    if(play1==='Rock')
+    {
+        image1.style.display='block';
+        image2.style.display='none';
+        image3.style.display = 'none';
+        image4.style.display='block';
+        image5.style.display='none';
+        image6.style.display = 'none';
+    }
+    else if(play1==='Paper')
+    {
+        
+        image1.style.display='none';
+        image2.style.display='block';
+        image3.style.display = 'none';
+
+        image4.style.display='none';
+        image5.style.display='block';
+        image6.style.display = 'none';
+    }
+    else if(play1==='Scissors')
+    {
+        image1.style.display='none';
+        image2.style.display='none';
+        image3.style.display = 'block';
+
+        image4.style.display='none';
+        image5.style.display='none';
+        image6.style.display = 'block';
+    }
+    
+}
+function showComputerImage(comp)
+{
+    if(comp==='Rock')
+    {
+        
+        image4.style.display='block';
+        image5.style.display='none';
+        image6.style.display = 'none';
+    }
+    else if(comp==='Paper')
+    {
+
+        image4.style.display='none';
+        image5.style.display='block';
+        image6.style.display = 'none';
+    }
+    else if(comp==='Scissors')
+    {
+
+        image4.style.display='none';
+        image5.style.display='none';
+        image6.style.display = 'block';
+    }
+
 }
 
 
