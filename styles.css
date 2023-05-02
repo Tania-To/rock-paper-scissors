@@ -4,15 +4,18 @@ body{
     background-color: lightslategrey;
 }
 .play{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    margin-left: 550px;
+    
     background-color: blue;
     font-size: 24px;
     border-radius: 12px;
 
+}
+.play_reset
+{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 .buttons{
     border-radius: 50%;
